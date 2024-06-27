@@ -31,7 +31,6 @@ router.post('/register', async (req, res) => {
 // Submit a payment request
 router.post('/payment', async (req, res) => {
   const { studentId, installmentNumber, date, amount } = req.body;
-
   try {
     const student = await Student.findOne({ studentId });
 

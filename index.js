@@ -130,8 +130,6 @@ app.get('/card/:studentId', async (req, res) => {
     }
   });
 
-// Import and use other routes
-app.use('/api/student', require('./routes/Student'));
 app.use('/api/admin', require('./routes/admin'));
 
 const PORT = process.env.PORT || 5000;
