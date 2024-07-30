@@ -115,6 +115,14 @@ app.post('/api/student/register', async (req, res) => {
     res.status(500).json({ message: error.message });
   }
 });
+app.get('/api/students/list', async(req, res)=>{
+  try {
+    const students = await Student.find({});
+    res.json(students);
+  } catch (err) {
+    res.status(500).json({ error: err.message });
+  }
+})
 app.get('/card/:studentId', async (req, res) => {
     const { studentId } = req.params;
     try {
